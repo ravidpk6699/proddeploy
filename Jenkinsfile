@@ -12,7 +12,7 @@ pipeline {
 	  stage('deploy to prod'){
           steps{
 		  sshagent(['tomcat']) {
-            sh "scp -o StrictHostKeyChecking=no webapp/target/WebApp.war azureuser@20.120.6.254:/opt/tomcat/webapps"
+            sh "scp -o StrictHostKeyChecking=no proddeploy/target/WebApp.war azureuser@20.120.6.254:/opt/tomcat/webapps"
 }
 		  
 	  }
